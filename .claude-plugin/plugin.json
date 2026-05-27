@@ -1,0 +1,17 @@
+{
+  "name": "thread-memory",
+  "description": "Persistent per-thread memory for Claude Code and other coding agents.",
+  "version": "0.1.0",
+  "author": {
+    "name": "kooroEZP"
+  },
+  "homepage": "https://github.com/kooroEZP/thread-memory",
+  "repository": "https://github.com/kooroEZP/thread-memory",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "memory",
+    "claude-code",
+    "agents"
+  ]
+}

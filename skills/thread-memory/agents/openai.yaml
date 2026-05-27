@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thread Memory"
+  short_description: "Persist per-thread agent context"
+  default_prompt: "Use Thread Memory to read and update the durable memory file for this session."

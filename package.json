@@ -1,0 +1,13 @@
+{
+  "name": "thread-memory",
+  "version": "0.1.0",
+  "type": "module",
+  "main": ".opencode/plugins/thread-memory.js",
+  "description": "Persistent per-thread memory for coding agents",
+  "license": "MIT",
+  "homepage": "https://github.com/kooroEZP/thread-memory",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kooroEZP/thread-memory.git"
+  }
+}

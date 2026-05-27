@@ -1,0 +1,41 @@
+{
+  "name": "thread-memory",
+  "version": "0.1.0",
+  "description": "Persistent per-thread memory for coding agents, with one-command local installation for Codex, Claude Code, Gemini CLI, and OpenCode.",
+  "author": {
+    "name": "kooroEZP",
+    "url": "https://github.com/kooroEZP"
+  },
+  "homepage": "https://github.com/kooroEZP/thread-memory",
+  "repository": "https://github.com/kooroEZP/thread-memory",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "skills",
+    "codex",
+    "claude",
+    "agents",
+    "persistence"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Thread Memory",
+    "shortDescription": "Persist durable context for each agent conversation",
+    "longDescription": "Thread Memory gives coding agents a durable README per thread or workspace, so they can read current context before work and update progress before finishing.",
+    "developerName": "kooroEZP",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use Thread Memory for this session.",
+      "Resume this project with durable context."
+    ],
+    "websiteURL": "https://github.com/kooroEZP/thread-memory",
+    "privacyPolicyURL": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+    "termsOfServiceURL": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+    "brandColor": "#2563EB",
+    "screenshots": []
+  }
+}
