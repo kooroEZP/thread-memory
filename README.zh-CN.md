@@ -2,9 +2,31 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-面向编码 Agent 的持久化线程记忆。
+面向 AI 编码 Agent、LLM 开发工具和长任务编码会话的本地持久化记忆。
 
-Thread Memory 会为 Codex、Claude Code、Gemini CLI、OpenCode 以及类似 Agent 运行环境中的每个对话或工作区创建一个小型、持久化的 `README.md`。Agent 在开始实质性工作前读取它，在结束前更新它，这样长任务就能在上下文压缩、进程重启或隔一段时间继续工作时保持连续性。
+Thread Memory 会为 Codex、Claude Code、Gemini CLI、OpenCode 以及类似 Agent 运行环境中的每个对话或工作区创建一个小型、持久化的 `README.md`。Agent 在开始实质性工作前读取它，在结束前更新它，这样长任务就能在上下文压缩、进程重启、中转 API/代理路由、或隔一段时间继续工作时保持连续性。
+
+关键词：AI Agent 记忆、LLM 记忆、持久化会话记忆、上下文持久化、上下文管理、Codex skill、Claude Code skill、OpenAI 兼容 API 代理、中转 API、API relay、号池、key pool。
+
+## 为什么需要 Thread Memory
+
+AI 编码 Agent 经常需要跨很多轮对话、很多天、甚至很多次模型调用保持连续性。下面这些情况都可能让上下文变得不完整：
+
+- 宿主工具对会话做了上下文压缩或摘要
+- 长时间间隔后重新打开同一个编码任务
+- 一个任务跨多个仓库、分支或终端
+- OpenAI 兼容 API 中转、网关、反向代理、号池或 key 池把请求路由到不同的上游账号或模型
+- Agent 只依赖聊天记录，而没有一个可持久保存的项目状态摘要
+
+Thread Memory 不替代完整聊天记录。它只保存 Agent 安全恢复工作所需的少量关键事实：当前目标、稳定上下文、已做决策、重要文件、最近进展、下一步和开放问题。
+
+## 适合的场景
+
+- Codex、Claude Code、Gemini CLI、OpenCode 以及其他 AI 编码 Agent
+- Agentic coding workflow 的持久化记忆
+- 长周期功能开发、调试、重构和仓库维护
+- 使用 OpenAI 兼容 API 代理、中转 API 或号池时，不能假设服务端 session 一定连续的场景
+- 想要一个不依赖数据库或外部服务的简单本地记忆层
 
 ## 快速开始
 

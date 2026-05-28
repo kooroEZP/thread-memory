@@ -3,8 +3,21 @@
   "version": "0.1.0",
   "type": "module",
   "main": ".opencode/plugins/thread-memory.js",
-  "description": "Persistent per-thread memory for coding agents",
+  "description": "Persistent local memory and context continuity for AI coding agents",
   "license": "MIT",
+  "keywords": [
+    "ai-agent-memory",
+    "llm-memory",
+    "conversation-memory",
+    "context-management",
+    "context-persistence",
+    "codex",
+    "claude-code",
+    "gemini-cli",
+    "opencode",
+    "openai-compatible",
+    "api-proxy"
+  ],
   "homepage": "https://github.com/kooroEZP/thread-memory",
   "repository": {
     "type": "git",

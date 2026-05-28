@@ -1,13 +1,13 @@
 {
   "name": "thread-memory-dev",
-  "description": "Development marketplace for Thread Memory.",
+  "description": "Development marketplace for Thread Memory, a persistent local memory layer for AI coding agents.",
   "owner": {
     "name": "kooroEZP"
   },
   "plugins": [
     {
       "name": "thread-memory",
-      "description": "Persistent per-thread memory for Claude Code and other coding agents.",
+      "description": "Persistent local memory and context continuity for Claude Code and other AI coding agents.",
       "version": "0.1.0",
       "source": "./",
       "author": {

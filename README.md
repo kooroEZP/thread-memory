@@ -2,9 +2,31 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-Persistent per-thread memory for coding agents.
+Persistent local memory for AI coding agents, LLM developer tools, and long-running coding sessions.
 
-Thread Memory gives Codex, Claude Code, Gemini CLI, OpenCode, and similar agent harnesses a small durable `README.md` for each conversation or workspace. Agents read it before substantive work and update it before finishing a turn, so long-running sessions can survive context compaction, restarts, and gaps between work sessions.
+Thread Memory gives Codex, Claude Code, Gemini CLI, OpenCode, and similar agent harnesses a small durable `README.md` for each conversation or workspace. Agents read it before substantive work and update it before finishing a turn, so long-running sessions can survive context compaction, restarts, API relay/proxy routing, and long gaps between work sessions.
+
+Keywords: AI agent memory, LLM memory, persistent conversation memory, context persistence, context management, Codex skill, Claude Code skill, OpenAI-compatible API proxy, API relay, account pool, key pool.
+
+## Why Thread Memory
+
+AI coding agents often need continuity across many turns, multiple days, or multiple model calls. Context can become incomplete when:
+
+- a conversation is compacted or summarized by the host tool
+- a coding session is restarted after a long break
+- the task spans multiple repositories, branches, or terminals
+- an OpenAI-compatible API relay, gateway, reverse proxy, account pool, or key pool routes calls through different upstream accounts or models
+- the agent relies on chat history instead of a durable project-local summary
+
+Thread Memory does not replace the full chat transcript. It stores the small set of facts an agent needs to resume work safely: the current objective, durable context, decisions, important files, recent progress, next steps, and open questions.
+
+## Good Fit For
+
+- Codex, Claude Code, Gemini CLI, OpenCode, and other AI coding agents
+- persistent memory for agentic coding workflows
+- long-running feature work, debugging, refactors, and repository maintenance
+- OpenAI-compatible API proxy or relay setups where session continuity cannot be assumed
+- teams that want a simple local memory layer without a database or external service
 
 ## Quickstart
 

@@ -1,6 +1,6 @@
 {
   "name": "thread-memory",
-  "description": "Persistent per-thread memory for Claude Code and other coding agents.",
+  "description": "Persistent local memory and context continuity for Claude Code and other AI coding agents.",
   "version": "0.1.0",
   "author": {
     "name": "kooroEZP"
@@ -11,7 +11,13 @@
   "keywords": [
     "skills",
     "memory",
+    "agent-memory",
+    "llm-memory",
+    "conversation-memory",
+    "context-management",
     "claude-code",
-    "agents"
+    "agents",
+    "api-proxy",
+    "openai-compatible"
   ]
 }
