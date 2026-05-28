@@ -51,6 +51,8 @@ class ThreadMemoryCliTests(unittest.TestCase):
             self.assertIn("# Thread Memory", text)
             self.assertIn("- Thread ID: `abc/123`", text)
             self.assertIn("## Current Objective", text)
+            self.assertIn("## Commands and Verification", text)
+            self.assertIn("## Known Risks and Gotchas", text)
             self.assertIn("## Open Questions", text)
 
     def test_path_does_not_create_readme(self) -> None:

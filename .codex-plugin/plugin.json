@@ -1,7 +1,7 @@
 {
   "name": "thread-memory",
   "version": "0.1.0",
-  "description": "Persistent local memory and context continuity for AI coding agents, with one-command installation for Codex, Claude Code, Gemini CLI, and OpenCode.",
+  "description": "Durable project-state memory for AI coding agents, with one-command installation for Codex, Claude Code, Gemini CLI, and OpenCode.",
   "author": {
     "name": "kooroEZP",
     "url": "https://github.com/kooroEZP"
@@ -13,6 +13,9 @@
     "memory",
     "agent-memory",
     "llm-memory",
+    "project-memory",
+    "durable-state",
+    "agent-handoff",
     "conversation-memory",
     "context-management",
     "context-persistence",
@@ -28,8 +31,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Thread Memory",
-    "shortDescription": "Persist durable context for each AI agent conversation",
-    "longDescription": "Thread Memory gives coding agents a durable README per thread or workspace, so they can read current context before work and update progress before finishing. It helps preserve continuity across context compaction, restarts, long gaps, and OpenAI-compatible API proxy or relay setups.",
+    "shortDescription": "Persist project state for AI coding agents",
+    "longDescription": "Thread Memory gives coding agents a durable README per thread or workspace, so they can read and update the project state that matters: objectives, decisions, files, verification commands, risks, progress, next steps, and open questions. It complements host context management instead of replacing it.",
     "developerName": "kooroEZP",
     "category": "Productivity",
     "capabilities": [

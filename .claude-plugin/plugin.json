@@ -1,6 +1,6 @@
 {
   "name": "thread-memory",
-  "description": "Persistent local memory and context continuity for Claude Code and other AI coding agents.",
+  "description": "Durable project-state memory for Claude Code and other AI coding agents.",
   "version": "0.1.0",
   "author": {
     "name": "kooroEZP"
@@ -13,6 +13,9 @@
     "memory",
     "agent-memory",
     "llm-memory",
+    "project-memory",
+    "durable-state",
+    "agent-handoff",
     "conversation-memory",
     "context-management",
     "claude-code",

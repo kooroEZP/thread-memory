@@ -2,31 +2,57 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-Persistent local memory for AI coding agents, LLM developer tools, and long-running coding sessions.
+Project-state memory for AI coding agents, LLM developer tools, and long-running software work.
 
-Thread Memory gives Codex, Claude Code, Gemini CLI, OpenCode, and similar agent harnesses a small durable `README.md` for each conversation or workspace. Agents read it before substantive work and update it before finishing a turn, so long-running sessions can survive context compaction, restarts, API relay/proxy routing, and long gaps between work sessions.
+Thread Memory gives Codex, Claude Code, Gemini CLI, OpenCode, and similar agent harnesses a small durable `README.md` for each conversation or workspace. Agents read it before substantive work and update it before finishing a turn, so the important project state survives context compaction, restarts, tool switches, and human handoffs.
 
-Keywords: AI agent memory, LLM memory, persistent conversation memory, context persistence, context management, Codex skill, Claude Code skill, OpenAI-compatible API proxy, API relay, account pool, key pool.
+Keywords: AI agent memory, LLM memory, project memory, durable agent state, persistent conversation memory, context persistence, context management, agent handoff, Codex skill, Claude Code skill, Gemini CLI, OpenCode, OpenAI-compatible API proxy, API relay, account pool, key pool.
 
 ## Why Thread Memory
 
-AI coding agents often need continuity across many turns, multiple days, or multiple model calls. Context can become incomplete when:
+AI coding tools already manage conversation context. Thread Memory does not replace that. It adds a small, explicit project-state layer that is easy for agents and humans to inspect.
+
+This matters because automatic context management is not a durable project notebook. Context can become incomplete or too vague when:
 
 - a conversation is compacted or summarized by the host tool
-- a coding session is restarted after a long break
-- the task spans multiple repositories, branches, or terminals
-- an OpenAI-compatible API relay, gateway, reverse proxy, account pool, or key pool routes calls through different upstream accounts or models
+- a session is restarted, resumed on another machine, or continued in another tool
+- the task spans multiple repositories, branches, worktrees, terminals, or days
+- important details live in tool output that later gets trimmed from context
+- an OpenAI-compatible API relay, gateway, reverse proxy, account pool, or key pool makes upstream session/cache continuity less predictable
 - the agent relies on chat history instead of a durable project-local summary
 
-Thread Memory does not replace the full chat transcript. It stores the small set of facts an agent needs to resume work safely: the current objective, durable context, decisions, important files, recent progress, next steps, and open questions.
+Thread Memory is not a transcript archive. It stores the small set of facts an agent needs to resume work safely: the current objective, durable context, decisions, important files, verification commands, known risks, recent progress, next steps, and open questions.
+
+## What It Is Not
+
+- Not a replacement for Codex, Claude Code, Gemini CLI, or OpenCode context management.
+- Not a vector database, RAG system, or long-term personal memory store.
+- Not a place to save secrets, raw logs, full diffs, or entire chat transcripts.
+- Not proof that API relays or account pools lose context. They usually work if the client sends the needed context. Thread Memory just lowers the risk when continuity depends on summaries, local state, or host-specific behavior.
 
 ## Good Fit For
 
 - Codex, Claude Code, Gemini CLI, OpenCode, and other AI coding agents
-- persistent memory for agentic coding workflows
-- long-running feature work, debugging, refactors, and repository maintenance
-- OpenAI-compatible API proxy or relay setups where session continuity cannot be assumed
+- project memory for agentic coding workflows
+- long-running feature work, debugging, refactors, migrations, and repository maintenance
+- handoffs between agents, tools, terminals, machines, or humans
+- preserving decisions, test commands, known risks, and file pointers after context compaction
+- OpenAI-compatible API proxy or relay setups where server-side session continuity should not be assumed
 - teams that want a simple local memory layer without a database or external service
+
+## What Agents Record
+
+The default memory file keeps a short, structured handoff:
+
+- current objective
+- durable project context
+- decisions and constraints
+- important files and modules
+- commands and verification status
+- known risks and gotchas
+- recent progress
+- next steps
+- open questions
 
 ## Quickstart
 
@@ -98,6 +124,16 @@ Environment variables:
 - `CODEX_THREAD_ID`, `CLAUDE_SESSION_ID`, `CLAUDE_CONVERSATION_ID`, `GEMINI_SESSION_ID`, `OPENCODE_SESSION_ID`: best-effort host ids used when present.
 
 When no session id is available, the CLI falls back to a stable workspace key based on the absolute `--cwd`.
+
+## FAQ
+
+### Does this duplicate built-in context management?
+
+No. Built-in context management decides what to send to the model for the next request. Thread Memory keeps a durable, human-readable project state summary on disk. The two layers complement each other.
+
+### Do API relays or account pools make context disappear?
+
+Not by themselves. If the host tool sends the needed messages, summaries, tool results, and files each time, upstream account changes do not automatically erase context. The risk is that session/cache assumptions, model routing, long gaps, or lossy summaries can make continuity less reliable. Thread Memory makes the critical state explicit and local.
 
 ## Repository Layout
 

@@ -85,6 +85,14 @@ def render_template(cwd: str, thread_id: str | None) -> str:
 
 -
 
+## Commands and Verification
+
+-
+
+## Known Risks and Gotchas
+
+-
+
 ## Recent Progress
 
 -

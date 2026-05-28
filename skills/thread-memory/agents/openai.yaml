@@ -1,4 +1,4 @@
 interface:
   display_name: "Thread Memory"
-  short_description: "Persist per-thread agent context"
-  default_prompt: "Use Thread Memory to read and update the durable memory file for this session."
+  short_description: "Persist project state for AI agents"
+  default_prompt: "Use Thread Memory to read and update the durable project-state file for this session."
